@@ -47,7 +47,7 @@ class CostRegNet(nn.Module):
         super(CostRegNet, self).__init__()
 
         self.conv0 = ConvBnReLU3D(16, 16, kernel_size=3, pad=1)   # (N, C_in, D, H, W)
-        self.conv0a = ConvBnReLU3D(16, 16, kernel_size=3, pad=1)
+        self.conv0a = ConvBnReLU3D(16, 16, kernel_size=3, pad=1)  # 16channel -> 16 channel，D代表的是M depth plane的个数
 
         self.conv1 = ConvBnReLU3D(16, 32,stride=2, kernel_size=3, pad=1)
         self.conv2 = ConvBnReLU3D(32, 32, kernel_size=3, pad=1)
