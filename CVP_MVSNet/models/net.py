@@ -19,7 +19,7 @@ from models.modules import *
 class FeaturePyramid(nn.Module):
     def __init__(self):
         super(FeaturePyramid, self).__init__()
-        self.conv0aa = conv(3, 64, kernel_size=3, stride=1)
+        self.conv0aa = conv(3, 64, kernel_size=3, stride=1)   
         self.conv0ba = conv(64,64, kernel_size=3, stride=1)
         self.conv0bb = conv(64,64, kernel_size=3, stride=1)
         self.conv0bc = conv(64,32, kernel_size=3, stride=1)
@@ -46,7 +46,7 @@ class CostRegNet(nn.Module):
     def __init__(self):
         super(CostRegNet, self).__init__()
 
-        self.conv0 = ConvBnReLU3D(16, 16, kernel_size=3, pad=1)
+        self.conv0 = ConvBnReLU3D(16, 16, kernel_size=3, pad=1)   # (N, C_in, D, H, W)
         self.conv0a = ConvBnReLU3D(16, 16, kernel_size=3, pad=1)
 
         self.conv1 = ConvBnReLU3D(16, 32,stride=2, kernel_size=3, pad=1)
